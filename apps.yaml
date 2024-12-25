@@ -1,0 +1,58 @@
+hello_world:
+    module: hello
+    class: HelloWorld
+    # No additional parameters needed for hello.py
+
+pid_temperature_and_humidity_control:
+  module: pid_ccc_temperature_control  # Assuming this module handles combined control
+  class: PIDTemperatureAndHumidityControl  # Assuming class handles both
+
+  # Control Settings
+  enabled: true
+  control_interval: 5  # in seconds
+  summary_interval: 60  # in seconds
+
+  # Temperature PID Settings
+  target_temp: 62.0  # Desired temperature in °F
+  kp: 1.5
+  ki: 0.4
+  kd: 0.2
+
+  # Humidity Settings
+  target_humidity: 60.0  # Desired humidity in %
+  hum_upper_limit: 61.0
+  hum_lower_limit: 59.0
+  hum_failsafe_limit: 62.0
+
+  # Heater Settings (assuming heater influences humidity indirectly)
+  heater_enabled: true
+
+  # VPD Settings (modify if VPD control is included within the module)
+  # target_vpd_low: 0.8  # in kPa
+  # target_vpd_high: 1.2  # in kPa
+  # vpd_kp: 1.5
+  # vpd_ki: 0.3
+  # vpd_kd: 0.05
+
+  # Temperature Failsafe Settings
+  upper_limit: 62.0  # Force cooler ON at or above this temp in °F
+  lower_limit: 61.9  # Force cooler OFF at or below this temp in °F
+
+  # Short-cycle Protection Settings
+  min_on_time: 30  # Minimum ON time in seconds
+  min_off_time: 20  # Minimum OFF time in seconds
+
+  # Cooling Load Tracking Settings (modify if applicable)
+  # cooling_load_tracking: true
+  # cooling_threshold: 600  # in seconds (10 minutes)
+
+  # Entities Configuration
+  cooler_entity: "switch.shelly1minig3_cc8da245848c_switch_0"
+  heater_entity: "switch.temps_humidity_veg_area_heater"
+  dehum_1: "switch.shelly1minig3_cc8da243dc78_switch_0"
+  dehum_2: "switch.shelly1minig3_34b7dac49170_switch_0"
+
+  # Sensors Configuration
+  temp_sensor: "sensor.temps_humidity_cannabis_curing_chamber_temperature"
+  hum_sensor: "sensor.temps_humidity_cannabis_curing_chamber_humidity"
+  vpd_sensor: "sensor.ccc_vapor_pressure_deficit"  # Modify if VPD control is included
