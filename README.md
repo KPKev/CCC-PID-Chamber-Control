@@ -2,28 +2,6 @@
 AppDaemon Temperature and Humidity Control
 A robust AppDaemon application for Home Assistant that automates heating, cooling, and dehumidifying systems based on real-time temperature and humidity readings. This setup ensures optimal environmental conditions while maintaining energy efficiency and equipment longevity.
 
-
-
-📋 Table of Contents
-📖 Introduction
-🌟 Features
-🚀 Installation
-🛠️ Prerequisites
-📥 Cloning the Repository
-🔧 Configuration
-🎛️ Configuration Details
-apps.yaml
-Python Scripts
-🛠️ Usage
-🔄 Starting AppDaemon
-📈 Monitoring
-🔍 Cooling Load Tracking
-📝 Logging Enhancements
-🛠️ Troubleshooting
-🤝 Contributing
-📄 License
-📞 Contact
-📖 Introduction
 Managing environmental conditions in controlled spaces such as greenhouses, indoor gardens, or server rooms is crucial for maintaining optimal performance and preventing equipment damage. This AppDaemon application leverages Home Assistant's capabilities to automate the control of heaters, coolers, and dehumidifiers based on real-time sensor data.
 
 🌟 Features
